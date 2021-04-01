@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
+use Session;
 
 
 class ProductController extends Controller
@@ -78,12 +79,16 @@ class ProductController extends Controller
             'quantity'=>$request->quantity,
         ]);
         $checkstatus = $response->status();
-        
-        if($checkstatus == 200)
+        $checkerror = $response->json();
+      
+        if($checkstatus != 200 && isset($checkerror['errors']))
         {
-            return redirect()->back()->with('thongbao','Cập nhật thành công');
+            Session::put('errorValidate',$checkerror['errors']);
+            return redirect()->back();
+            
         }else{
-            return redirect()->back()->with('error','Cập nhật thất bại');
+            Session::forget('errorValidate');
+            return redirect()->back()->with('thongbao','Cập nhật thành công');
         }
     }
     public function PostUpdateProductInfo(Request $request,$id)
@@ -127,11 +132,16 @@ class ProductController extends Controller
             'original_sku'=>$request->originalsku,
         ]);
         $checkstatus = $response->status();
-        if($checkstatus == 200)
+        $checkerror = $response->json();
+        
+        if($checkstatus != 200 && isset($checkerror['errors']))
         {
-            return redirect()->back()->with('thongbao','Cập nhật thành công');
+            Session::put('errorValidate',$checkerror['errors']);
+            return redirect()->back();
+           
         }else{
-            return redirect()->back()->with('error','Cập nhật thất bại');
+            Session::forget('errorValidate');
+            return redirect()->back()->with('thongbao','Cập nhật thành công');
         }
         
     }

@@ -29,6 +29,16 @@
                                 {{Session('error')}}
                             </div>
                         @endif
+                        @php
+                            $errorValidate = Session::get('errorValidate');
+                         @endphp
+                         @if(isset($errorValidate))
+                            <div class="alert alert-danger mt-2" id="alert">
+                                @foreach($errorValidate as $error)
+                                    {{$error}}
+                                @endforeach
+                            </div>
+                        @endif
                         @yield('content')
                         <!-- <div class="row">
                             <div class="col-xl-6">
@@ -69,7 +79,7 @@
             $(document).ready(function(){
                 window.setTimeout(function(){
                     $('#alert').alert('close');
-                },5000);
+                },10000);
             });
         </script>
         
