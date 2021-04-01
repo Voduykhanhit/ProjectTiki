@@ -8,9 +8,9 @@
         <meta name="author" content="" />
         <title>@yield('title')</title>
          <base href="{{asset('')}}">
-        <link href="{{asset('public/admin_asset/css/styles.css')}}" rel="stylesheet" />
-        <link href="{{asset('public/admin_asset/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" crossorigin="anonymous" />
-        <script src="{{asset('public/admin_asset/js/all.min.js')}}" crossorigin="anonymous"></script>
+        <link href="admin_asset/css/styles.css" rel="stylesheet" />
+        <link href="admin_asset/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="admin_asset/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
        @include('admin.layout.header')
@@ -94,15 +94,15 @@
                @include('admin.layout.footer')
             </div>
         </div>
-        <script src="{{asset('public/admin_asset/js/jquery-3.5.1.slim.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{asset('public/admin_asset/js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{asset('public/admin_asset/js/scripts.js')}}"></script>
-        <script src="{{asset('public/admin_asset/js/Chart.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{asset('public/admin_asset/assets/demo/chart-area-demo.js')}}"></script>
-        <script src="{{asset('public/admin_asset/assets/demo/chart-bar-demo.js')}}"></script>
-        <script src="{{asset('public/admin_asset/js/jquery.dataTables.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{asset('public/admin_asset/js/dataTables.bootstrap4.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{asset('public/admin_asset/assets/demo/datatables-demo.js')}}"></script>
+        <script src="admin_asset/js/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="admin_asset/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="admin_asset/js/scripts.js"></script>
+        <script src="admin_asset/js/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="admin_asset/assets/demo/chart-area-demo.js"></script>
+        <script src="admin_asset/assets/demo/chart-bar-demo.js"></script>
+        <script src="admin_asset/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="admin_asset/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="admin_asset/assets/demo/datatables-demo.js"></script>
         <script>
             $(document).ready(function(){
                 window.setTimeout(function(){

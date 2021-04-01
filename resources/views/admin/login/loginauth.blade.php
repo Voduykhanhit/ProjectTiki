@@ -8,8 +8,8 @@
         <meta name="author" content="" />
         <title>Login Admin</title>
         <base href="{{asset('')}}">
-        <link href="public/admin_asset/css/styles.css" rel="stylesheet" />
-        <script src="public/admin_asset/js/all.min.js" crossorigin="anonymous"></script>
+        <link href="admin_asset/css/styles.css" rel="stylesheet" />
+        <script src="admin_asset/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -57,8 +57,8 @@
                 </footer>
             </div>
         </div>
-        <script src="public/admin_asset/js/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-        <script src="public/admin_asset/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="public/admin_asset/js/scripts.js"></script>
+        <script src="admin_asset/js/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="admin_asset/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="admin_asset/js/scripts.js"></script>
     </body>
 </html>
