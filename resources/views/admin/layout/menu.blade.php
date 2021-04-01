@@ -2,10 +2,6 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="{{url('/admin/dashboard')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt" style="color:#007bff;"></i></div>
-                                Dashboard
-                            </a>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSupplier" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-store" style="color:#007bff;"></i></div>
                                         Information Seller

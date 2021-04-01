@@ -16,14 +16,11 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/','PagesController@getIndex')->middleware('CheckLogin');
+Route::get('/','SellerController@getSeller')->middleware('CheckLogin');
 Route::get('/login','AdminController@getLogin');
 Route::post('/checklogin','AdminController@CheckLogin');
 Route::get('/logout','AdminController@Logout');
 Route::group(['prefix'=>'admin','middleware'=>'CheckLogin'],function(){
-    Route::group(['prefix'=>'dashboard'],function(){
-        Route::get('/','PagesController@getIndex');
-    });
     Route::group(['prefix'=>'category'],function(){
         Route::get('/list-category','CategoryController@getCategory');
         Route::get('/details/{id}','CategoryController@getDetailsCategory');
