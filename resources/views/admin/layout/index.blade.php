@@ -7,7 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>@yield('title')</title>
-        <!-- <base href="{{asset('')}}"> -->
+         <base href="{{asset('')}}">
         <link href="{{asset('public/admin_asset/css/styles.css')}}" rel="stylesheet" />
         <link href="{{asset('public/admin_asset/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" crossorigin="anonymous" />
         <script src="{{asset('public/admin_asset/js/all.min.js')}}" crossorigin="anonymous"></script>
