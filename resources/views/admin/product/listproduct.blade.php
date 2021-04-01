@@ -3,7 +3,7 @@
     List Product
 @endsection
 @section('content')
-<div class="card mb-4">
+<div class="card mb-4 mt-4">
                             <div class="card-header bg-primary" style="color:#FFF;">
                                 <i class="fas fa-table mr-1"></i>
                                DANH SÁCH SẢN PHẨM

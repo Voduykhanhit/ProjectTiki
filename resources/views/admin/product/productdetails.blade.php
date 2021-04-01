@@ -10,7 +10,7 @@
             @endforeach
         </div>
     @endif
-<div class="card mb-4">
+<div class="card mb-4 mt-4">
                             <div class="mt-2 ml-2 mb-2">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSku">
                                 <i class="fas fa-plus"></i> Update Sku
