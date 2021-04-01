@@ -79,15 +79,17 @@ class ProductController extends Controller
             'quantity'=>$request->quantity,
         ]);
         $checkstatus = $response->status();
-        $checkerror = $response->json();
+       
+        $checkerror = json_decode($response->body());
+        
       
-        if($checkstatus != 200 && isset($checkerror['errors']))
+        if($checkstatus != 200 && isset($checkerror->errors))
         {
-            Session::put('errorValidate',$checkerror['errors']);
-            return redirect()->back();
+            
+            return redirect()->back()->with('ErrorsValidate',$checkerror);
             
         }else{
-            Session::forget('errorValidate');
+           
             return redirect()->back()->with('thongbao','Cập nhật thành công');
         }
     }
@@ -131,16 +133,17 @@ class ProductController extends Controller
             'product_id'=>$id,
             'original_sku'=>$request->originalsku,
         ]);
-        $checkstatus = $response->status();
-        $checkerror = $response->json();
+        $checkstatus =$response->status();
+       
+        $checkerror = json_decode($response->body());
         
-        if($checkstatus != 200 && isset($checkerror['errors']))
+        if($checkstatus !=200 && isset($checkerror->errors))
         {
-            Session::put('errorValidate',$checkerror['errors']);
-            return redirect()->back();
+           
+            return redirect()->back()->with('ErrorsValidate',$checkerror);
            
         }else{
-            Session::forget('errorValidate');
+            
             return redirect()->back()->with('thongbao','Cập nhật thành công');
         }
         

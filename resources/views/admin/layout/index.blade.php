@@ -30,14 +30,16 @@
                             </div>
                         @endif
                         @php
-                            $errorValidate = Session::get('errorValidate');
+                            $CheckErrors = Session('ErrorsValidate');
                          @endphp
-                         @if(isset($errorValidate))
-                            <div class="alert alert-danger mt-2" id="alert">
-                                @foreach($errorValidate as $error)
-                                    {{$error}}
+                         @if(isset($CheckErrors))
+                            @if(count($CheckErrors->errors)>0)
+                                @foreach($CheckErrors->errors as $er)
+                                    <div class="alert alert-danger mt-2" id="alert">
+                                        {{$er}}
+                                    </div>
                                 @endforeach
-                            </div>
+                            @endif
                         @endif
                         @yield('content')
                         <!-- <div class="row">
