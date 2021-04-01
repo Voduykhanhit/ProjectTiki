@@ -16,7 +16,7 @@ class AdminController extends Controller
         if($request->email == $account_email && $request->password == $account_password)
         {
             Session::put('name_account',$account_email);
-            return redirect('admin/dashboard')->with('thongbao','Đăng nhập thành công');
+            return redirect('admin/seller/list-seller')->with('thongbao','Đăng nhập thành công');
 
         }else{
             return redirect()->back()->with('thongbao','Sai tên tài khoản hoặc mật khẩu');
