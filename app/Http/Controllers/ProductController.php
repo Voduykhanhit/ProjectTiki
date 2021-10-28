@@ -31,22 +31,26 @@ class ProductController extends Controller
     }
     public function getProductDetails($id)
     {
-        $token = '55f438d1-3438-409e-b5a4-9d16e764c5b8';
-        $response = Http::withHeaders([
-            'tiki-api' => $token,
-            'Accept' => 'application/json',
-        ])->get('https://api-sandbox.tiki.vn/integration/v1/products/'.$id);
-
-        
-        $ckeckstatus = $response->status();
-        if($ckeckstatus == 200)
-        {
-            $details = $response->json();
-            return view('admin.product.productdetails',compact('details'));
-        }else{
-            return redirect()->back()->with('error','Kết nối dữ liệu thất bại');
-        }
-        
+        try{
+            $token = '55f438d1-3438-409e-b5a4-9d16e764c5b8';
+            $response = Http::withHeaders([
+                'tiki-api' => $token,
+                'Accept' => 'application/json',
+            ])->get('https://api-sandbox.tiki.vn/integration/v1/products/'.$id);
+    
+            
+            $ckeckstatus = $response->status();
+            if($ckeckstatus == 200)
+            {
+                $details = $response->json();
+                
+                return view('admin.product.productdetails',compact('details'));
+            }else{
+                return redirect()->back()->with('error','Kết nối dữ liệu thất bại');
+            }
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }      
     }
     public function PostUpdateSku(Request $request,$id)
     {
@@ -105,6 +109,7 @@ class ProductController extends Controller
             'market_price'=>$request->marketprice,
             'img'=>$request->thumbnail,
         ]);
+        dd($response->json());
         $checkstatus = $response->status();
         if($checkstatus == 200)
         {

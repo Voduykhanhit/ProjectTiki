@@ -19,7 +19,6 @@ class TrackingController extends Controller
     if($checkstatus == 200)
     {
         $data['tracking'] = $response->json();
-       
         return view('admin.tracking.trackinglist',$data);
     }else{
         return redirect()->back()->with('error','Không kết nối được');
@@ -37,7 +36,7 @@ class TrackingController extends Controller
             ]
             )->post('https://api-sandbox.tiki.vn/integration/v1/tracking/'.$id.'/replay');
         
-        $data = $response->status();     
+        $data = $response->status(); 
         if($data == 200)
         {
             return redirect()->back()->with('thongbao','Dữ liệu đã được gửi đi!!!');

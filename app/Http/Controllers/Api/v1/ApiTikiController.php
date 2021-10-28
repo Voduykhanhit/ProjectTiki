@@ -14,7 +14,8 @@ class ApiTikiController extends Controller
             'tiki-api'=>$token
         ]
         )->get('https://api-sandbox.tiki.vn/integration/v1/products');
-        $all=json_decode($response->getBody());
+        
+        $all=json_decode($response->Body());
         return response()->json($all,200);
     }
     public function ProductDetailsApi($product_id)
@@ -25,7 +26,7 @@ class ApiTikiController extends Controller
             'tiki-api'=>$token
         ]
         )->get('https://api-sandbox.tiki.vn/integration/v1/products/'.$product_id);
-        $all=json_decode($response->getBody());
+        $all=json_decode($response->Body());
         return response()->json($all,200);
     }
     

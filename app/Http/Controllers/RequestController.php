@@ -25,6 +25,24 @@ class RequestController extends Controller
         }
        
     }
+    public function Details($id)
+    {
+        $token = '55f438d1-3438-409e-b5a4-9d16e764c5b8';
+        $response = Http::withHeaders(
+            [
+                'tiki-api'=>$token
+            ]
+        )->get('https://api-sandbox.tiki.vn/integration/v1/requests/'.$id);
+        $ckeckstatus = $response->status();
+        if($ckeckstatus == 200)
+        {
+            $details = $response->json();
+           
+            return view('admin.request.requestdetails',compact('details'));
+        }else{
+            return redirect()->back()->with('error','Không kết nối được');
+        }
+    }
     public function getDelete($id)
     {
         $token='55f438d1-3438-409e-b5a4-9d16e764c5b8';

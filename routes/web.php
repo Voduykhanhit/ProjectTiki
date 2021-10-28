@@ -40,6 +40,7 @@ Route::group(['prefix'=>'admin','middleware'=>'CheckLogin'],function(){
     });
     Route::group(['prefix'=>'request'],function(){
         Route::get('/list-request','RequestController@getRequest');
+        Route::get('/details/{id}','RequestController@Details');
         Route::get('/delete/{id}','RequestController@getDelete');
     });
     Route::group(['prefix'=>'seller'],function(){

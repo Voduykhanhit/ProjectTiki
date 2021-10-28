@@ -3,11 +3,11 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <form action="{{url('/admin/product/updateProductInfo/'.$details['product_id'])}}" method="post" enctype="multipart/form-data">
-        @csrf
+            @csrf
                 <div class="modal-header bg-primary">
-                    <h5 class="modal-title" style="color:#FFF;" id="exampleModalLabel">UPDATE PRODUCT INFO</h5>
+                    <h5 class="modal-title" style="color:#FFF;" id="exampleModalLabel"><i class="fas fa-edit"></i> Cập nhật PRODUCT INFO</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -31,10 +31,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
-                </div>
-                
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Lưu</button>
+                </div>   
         </form>
     </div>
   </div>
